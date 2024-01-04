@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flute Orchestra</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1184597057382666301/1192580878128382094/fluteorchestra2.jpeg?ex=65a9987e&is=6597237e&hm=9e4f5364007e3e8fbcdb131463fe3805fbab9171c18acaea448b4a9f75f8e066&">
+    <style>
+        body {
+            background-color: #0D1B2A;
+            color: #FFD700; /* Gold */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-weight: Bold;
+            text-align: center;
+        }
+
+        header {
+            background-color: #0D1B2A;
+            padding: 20px;
+            text-align: right;
+            position: relative;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #FFD700;
+            margin-left: 20px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #FFD700;
+            margin: 0 20px;
+        }
+
+        .dashboard-button {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: darkblue; /* dark red */
+            border-radius: 4px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .dashboard-button:hover {
+            background-color: blue; /* darker red */
+        }
+
+        main {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 25px;
+        }
+
+        h1, h2, h3 {
+            color: #FFD700; /* Gold */
+            font-size: 45px;
+        }
+
+        footer {
+            background-color: #0D1B2A;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button {
+            background-color: darkblue;
+            color: white;
+            padding: 16px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Arial;
+            font-weight: Bold;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: #b34545;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="login.html" class="dashboard-button">Dashboard</a>
+    </header>
+
+    <main>
+        <section id="home">
+            <form action="mailto:central3465@gmail.com">
+                <label for="name">Your Name:</label>
+                <input type="name" id="name" name="name">
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="message">Message:</label>
+                <input type="message" id="msg" name="message">
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Flute Orchestra. All rights reserved.
+    </footer>
+</body>
+</html>
