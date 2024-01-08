@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Flute Orchestra</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1184597057382666301/1192580878128382094/fluteorchestra2.jpeg?ex=65a9987e&is=6597237e&hm=9e4f5364007e3e8fbcdb131463fe3805fbab9171c18acaea448b4a9f75f8e066&">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 100% of the viewport height */
+            background-color: #0D1B2A;
+            color: #FFD700;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-weight: Bold;
+            text-align: center;
+        }
+
+        .login-container {
+            background-color: #0D1B2A;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            width: 350px;
+            text-align: center;
+            font-size: 20px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .login-container h1 {
+            color: #ff4d4d;
+            font-size: 30px;
+        }
+
+        .alert {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .redirect-message {
+            color: #7289DA;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Under Development</h1>
+        <div class="alert" id="alert-message"></div>
+        <div class="redirect-message">Redirecting you back to <a href="index.html">index.html</a>...</div>
+    </div>
+
+    <script>
+        // Simulated server-side logic to handle the callback
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const alertMessageElement = document.getElementById('alert-message');
+
+        if (code) {
+            // Simulated server-side processing (exchange code for access token)
+            // This is where you would make a server-side request to exchange the code for an access token.
+            // For the sake of this example, we'll simulate a successful authorization.
+            const authorized = true;
+
+            if (authorized) {
+                // Display success message
+                alertMessageElement.textContent = 'Authorization successful!';
+                
+                // Simulate delay for demonstration purposes
+                setTimeout(() => {
+                    // Redirect the user to another page
+                    window.location.href = 'index.html';
+                }, 2000); // 2000 milliseconds (2 seconds) delay before redirection
+            } else {
+                // Display error message
+                alertMessageElement.textContent = 'Authorization failed. Please try again.';
+                
+                // Simulate delay for demonstration purposes
+                setTimeout(() => {
+                    // Redirect the user to another page
+                    window.location.href = 'index.html';
+                }, 3000); // 3000 milliseconds (3 seconds) delay before redirection
+            }
+        } else {
+            // If no code is present, redirect immediately
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
