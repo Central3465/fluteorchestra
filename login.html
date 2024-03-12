@@ -1,99 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Flute Orchestra</title>
-    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1184597057382666301/1192580878128382094/fluteorchestra2.jpeg?ex=65a9987e&is=6597237e&hm=9e4f5364007e3e8fbcdb131463fe3805fbab9171c18acaea448b4a9f75f8e066&">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn.discordapp.com/attachments/1184597057382666301/1192580878128382094/fluteorchestra2.jpeg?ex=65a9987e&is=6597237e&hm=9e4f5364007e3e8fbcdb131463fe3805fbab9171c18acaea448b4a9f75f8e066&"
+    />
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* 100% of the viewport height */
-            background-color: #0D1B2A;
-            color: #FFD700;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            font-weight: Bold;
-            text-align: center;
-        }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* 100% of the viewport height */
+        background-color: #0d1b2a;
+        color: #ffd700;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-weight: Bold;
+        text-align: center;
+      }
 
-        .login-container {
-            background-color: #0D1B2A;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            padding: 15px;
-            width: 350px;
-            text-align: center;
-            font-size: 20px;
-            margin-top: auto;
-            margin-bottom: auto;
-        }
+      .login-container {
+        background-color: #0d1b2a;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        width: 350px;
+        text-align: center;
+        font-size: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
 
-        .login-container h1 {
-            color: #ff4d4d;
-            font-size: 30px;
-        }
+      .login-container h1 {
+        color: #ff4d4d;
+        font-size: 30px;
+      }
 
-        .alert {
-            background-color: #ff4d4d;
-            color: white;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
+      form {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+      }
 
-        .redirect-message {
-            color: #7289DA;
-            margin-top: 15px;
-        }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        background-color: darkblue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: Arial;
+        font-weight: Bold;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        width: 100%;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #b34545;
+      }
+
+      button {
+        background-color: darkblue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: Arial;
+        font-weight: Bold;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        width: 100%;
+      }
+
+      button:hover {
+        background-color: #b34545;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="login-container">
-        <h1>Under Development</h1>
-        <div class="alert" id="alert-message"></div>
-        <div class="redirect-message">Redirecting you back to <a href="index.html">index.html</a>...</div>
+      <h1>Log In</h1>
+      <p>Before you continue, please log in into your account below.</p>
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required /><br />
+
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" required /><br />
+
+        <input type="submit" id="submit" name="submit" /><br />
+      </form>
+      <a href="https://discord.com/oauth2/authorize?client_id=1217188680083439647&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Flogin.html&scope=identify+email">
+        <button>Continue with Discord</button>
+      </a>
+      <script src="src/login.js"></script>
     </div>
-
-    <script>
-        // Simulated server-side logic to handle the callback
-        const urlParams = new URLSearchParams(window.location.search);
-        const code = urlParams.get('code');
-        const alertMessageElement = document.getElementById('alert-message');
-
-        if (code) {
-            // Simulated server-side processing (exchange code for access token)
-            // This is where you would make a server-side request to exchange the code for an access token.
-            // For the sake of this example, we'll simulate a successful authorization.
-            const authorized = true;
-
-            if (authorized) {
-                // Display success message
-                alertMessageElement.textContent = 'Authorization successful!';
-                
-                // Simulate delay for demonstration purposes
-                setTimeout(() => {
-                    // Redirect the user to another page
-                    window.location.href = 'index.html';
-                }, 2000); // 2000 milliseconds (2 seconds) delay before redirection
-            } else {
-                // Display error message
-                alertMessageElement.textContent = 'Authorization failed. Please try again.';
-                
-                // Simulate delay for demonstration purposes
-                setTimeout(() => {
-                    // Redirect the user to another page
-                    window.location.href = 'index.html';
-                }, 3000); // 3000 milliseconds (3 seconds) delay before redirection
-            }
-        } else {
-            // If no code is present, redirect immediately
-            window.location.href = 'index.html';
-        }
-    </script>
-</body>
+  </body>
 </html>
